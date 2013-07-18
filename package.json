@@ -1,0 +1,11 @@
+{
+    "amd": {},
+    "volo": {
+        //"url": "https://github.com/prjts/ob-project-bp/archive/master.zip",
+        "baseDir": "./lib",
+        "dependencies": {
+            "require": "github:jrburke/requirejs/2.1.8",
+            "api": "github:hasadna/omuni-budget/master#openbudget/commons/static/src/api.js"
+        }
+    }
+}
