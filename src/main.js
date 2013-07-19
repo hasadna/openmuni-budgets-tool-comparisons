@@ -1,7 +1,7 @@
 requirejs.config({
     baseUrl : '/src',
     paths   : {
-        api : '../lib/api'
+        api : 'http://dev.openmuni.org.il/static/src/api'
     }
 });
 requirejs([

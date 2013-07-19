@@ -3,8 +3,7 @@
     "volo": {
         "baseDir": "./lib",
         "dependencies": {
-            "require": "github:jrburke/requirejs/2.1.8",
-            "api": "github:hasadna/omuni-budget/master#openbudget/commons/static/src/api.js"
+            "require": "github:jrburke/requirejs/2.1.8"
         }
     }
 }
