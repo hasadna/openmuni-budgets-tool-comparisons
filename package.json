@@ -1,7 +1,6 @@
 {
     "amd": {},
     "volo": {
-        //"url": "https://github.com/prjts/ob-project-bp/archive/master.zip",
         "baseDir": "./lib",
         "dependencies": {
             "require": "github:jrburke/requirejs/2.1.8",
