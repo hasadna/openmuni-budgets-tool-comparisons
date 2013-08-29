@@ -1,4 +1,4 @@
-ob-project-bp
-=============
+Open Budgets Tool Template
+==========================
 
-Open Budget project boilerplate
+Open Budgets' tool project template.
