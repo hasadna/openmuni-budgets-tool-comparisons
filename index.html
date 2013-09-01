@@ -6,18 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/src/css/main.css"/>
     <title></title>
 </head>
 <body>
+    <div id="comparisons" class="uijet_app">
+        <section id="main_container" class="top_container">
+            <div id="welcome" data-i18n="welcome-message"></div>
+            <div id="entity_selection" class="main_pane">
+                <header class="main_section_header">
+                    <p class="section_description" data-i18n="choose-entity"></p>
+                    <input type="text" name="entity" id="entity_field" data-i18n="search-placeholder" data-i18n-attr="placeholder"/>
+                </header>
+                <ul id="entities_list"></ul>
+            </div>
+            <div id="nodes_picker" class="main_pane">
+                <header id="nodes_picker_header" class="main_section_header">
+                    <p class="section_description" id="nodes_picker_header_description" data-i18n="choose-budget-item"></p>
+                    <ul id="nodes_breadcrumbs" data-i18n="search-under" data-i18n-attr="data-prefix">
+                        <li data-id="0" data-i18n="main"></li><li id="nodes_breadcrumbs_button">
+                            <span id="nodes_breadcrumbs_button_text">...</span>
+                            <ul id="nodes_breadcrumbs_button_menu"></ul>
+                        </li>
+                    </ul>
+                    <h2 id="nodes_scope_name">
+                        <span id="nodes_scope_name_content"></span>
+                        <span id="search_crumb"></span>
+                    </h2>
+                    <input type="text" name="nodes_search" id="nodes_search" data-i18n="search-placeholder" data-i18n-attr="placeholder"/>
+                    <span id="filters_selected"></span>
+                    <span id="filters_search"></span>
+                    <span id="nodes_search_exit"></span>
+                </header>
+                <section id="nodes_list_container">
+                    <ul id="nodes_list_header">
+                        <li class="nodes_list_header_node" data-column="select"></li>
+                        <li class="nodes_list_header_node" data-column="type"></li>
+                        <li class="nodes_list_header_node" data-column="code" data-i18n="code"></li>
+                        <li class="nodes_list_header_node" data-column="name" data-i18n="name"></li>
+                        <li class="nodes_list_header_node" data-column="direction" data-i18n="type"></li>
+                    </ul>
+                    <ul id="nodes_list"></ul>
+                </section>
+                <footer id="nodes_picker_footer">
+                    <p id="results_count"></p>
+                    <div id="sheet_type_picker">
+                        <span data-i18n="summarize-data"></span>
+                        <span id="summarize_budget" class="summarize_data_button" data-i18n="budget"></span>
+                        <span id="summarize_actual" class="summarize_data_button" data-i18n="actual"></span>
+                    </div>
+                    <span id="picker_done" data-i18n="done"></span>
+                </footer>
+            </div>
+            <div id="chart_section">
+                <header id="viz_actions_menu">
+                    <span id="viz_new" class="viz_action" data-i18n="viz-new"></span>
+                    <span id="viz_duplicate" class="viz_action" data-i18n="viz-duplicate"></span>
+                    <span id="viz_delete" class="viz_action" data-i18n="viz-delete"></span>
+                    <p id="viz_actions_menu_left">
+                        <span id="viz_export" class="viz_action" data-i18n="viz-export"></span>
+                        <span id="viz_publish" class="viz_action" data-i18n="viz-publish"></span>
+                        <span id="viz_save" class="viz_action" data-i18n="viz-save"></span>
+                    </p>
+                </header>
+                <section id="chart_heading"></section>
+                <div id="chart"></div>
+                <footer id="chart_footer">
+                    <span id="chart_period_start" class="chart_period_button"></span>
+                    <span id="chart_period_end" class="chart_period_button"></span>
+                </footer>
+            </div>
+        </section>
+        <section id="right_container" class="top_container">
+            <div id="work_menus">
+                <span id="site_menu_open" class="small_heading" data-i18n="open-muni-budget"></span>
+                <div id="comparing_pane">
+                    <section id="legend_controls" class="small_heading">
+                        <h3 class="right_menu_heading" data-i18n="compare"></h3>
+                        <span id="add_legend"><span data-i18n="add"></span>
+                            <span id="add_legend_cancel"></span>
+                        </span>
+                        <ul id="legends_list"></ul>
+                        <span id="normalization_selector">
+                            <span id="normalization_selector_content" data-i18n="normalize-data"></span>
+                            <span id="normalization_selector_selection"></span>
+                            <ul id="normalization_selector_menu">
+                                <li data-i18n="no-normalization" data-key="0"></li>
+                                <li data-i18n="population" data-key="population"></li>
+                                <li data-i18n="ground-surface" data-key="ground_surface"></li>
+                            </ul>
+                        </span>
+                    </section>
+                </div>
+                <div id="selected_muni_pane">
+                    <h3 class="right_menu_heading" id="selected_muni_name"></h3>
+                </div>
+            </div>
+        </section>
+    </div>
     <script>
         var API_VERSION = 'v1';
-        var API_INDEX = 'api.dev.openmuni.org.il/';
-        //var gettext = window.gettext || function (v) { return v; };
-        //var ngettext = window.gettext || function (v1, vn, n) { return v1; };
-        //var interpolate = window.interpolate || function (fmts, d, named) { return fmts; };
+        var API_INDEX = 'http://api.dev.openmuni.org.il/';
+        var gettext = window.gettext || function (v) { return v; };
+        var ngettext = window.gettext || function (v1, vn, n) { return v1; };
+        var interpolate = window.interpolate || function (fmts, d, named) { return fmts; };
     </script>
-    <!--script src="/projects/jsi18n/"></script-->
     <script src="/lib/require.js" data-main="/src/main"></script>
 </body>
 </html>
