@@ -1,0 +1,209 @@
+.filtercrumb_remove {
+    padding: 0;
+}
+.filtercrumb_remove:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: -1.5rem;
+    width: 11px;
+    height: 11px;
+    margin-top: -4px;
+    background: url(../img/x_for_search.png) center no-repeat;
+}
+.filter_content {
+    display: inline-block;
+}
+
+.uijet_filtercrumb {
+    position: relative;
+    cursor: pointer;
+}
+
+.nodes_header_menu_button {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+.nodes_header_menu_button:hover, .nodes_header_menu_button.opened {
+    background-color: #d0d0dc;
+}
+.nodes_header_menu_button .uijet_dropmenubutton {
+    width: 54px;
+    height: 66px;
+    padding: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.nodes_header_menu_button .uijet_menu {
+    font-size: 1.3rem;
+}
+.nodes_header_menu_button .uijet_menu li {
+    height: 44px;
+    line-height: 44px;
+    padding: 0 1rem;
+    text-align: right;
+}
+.nodes_header_menu_button .uijet_menu li:hover {
+    background-color: #a1a1b9;
+}
+
+.summarize_data_button {
+    padding: .9rem;
+}
+.summarize_data_button:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-top: 2px;
+    margin-left: .5rem;
+    border-radius: 5px;
+    border: 1px solid #141450;
+}
+.summarize_data_button.activated {
+    color: white;
+}
+.summarize_data_button.activated:before {
+    border-color: white;
+    background-color: white;
+}
+
+#picker_done {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 74px;
+    height: 24px;
+    margin: -12px 20px 0;
+    padding: 2px 0;
+    text-align: center;
+    font-size: 1.3rem;
+    background-color: #1d7680;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+#picker_done.disabled {
+    background-color: #646e78;
+    color: #d0d0dc;
+}
+
+#filters_search {
+    background: url(../img/glass_blue.png) center no-repeat;
+}
+#filters_search_wrapper {
+    top: 0;
+    left: 0;
+}
+#filters_search_menu li[data-prefix]:before {
+    content: attr(data-prefix);
+}
+#filters_search_menu li[data-prefix]:after {
+    content: '"';
+}
+#filters_search_menu li:first-child {
+    border-bottom: 1px solid white;
+}
+#filters_search_menu_wrapper {
+    left: 0;
+    max-height: 320px;
+    background-color: #d0d0dc;
+}
+
+#filters_selected {
+    position: absolute;
+    top: 0;
+    left: 54px;
+    width: 54px;
+    height: 66px;
+    background: url(../img/selected_inactive.png) center no-repeat;
+}
+#filters_selected:hover {
+    background: url(../img/selected_hover.png) center no-repeat;
+}
+#filters_selected.activated {
+    background: url(../img/selected_active.png) center no-repeat;
+}
+
+#nodes_picker {
+    background-color: white;
+}
+#nodes_picker_header {
+    position: relative;
+}
+
+#nodes_filters_pane_wrapper {
+    overflow: visible;
+}
+
+#nodes_picker_footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    background-color: #00ccc2;
+}
+
+#nodes_scope_name {
+    position: absolute;
+    bottom: 0;
+    right: 18px;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    font-size: 3.261rem;
+    font-weight: normal;
+}
+#nodes_scope_name_content {
+    line-height: 150%;
+}
+
+#nodes_search_exit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 66px;
+    padding: 0;
+    background: url(../img/x_icon_blue.png) center no-repeat;
+}
+
+
+#nodes_search {
+    font-family: "Alef Hebrew", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+#nodes_search_wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 18px;
+}
+
+#results_count {
+    padding: 1rem 24px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1d7680;
+}
+
+#search_crumb:before {
+    content: '\203a';
+    padding-left: 5px;
+    color: #d0d0dc;
+}
+
+#sheet_type_picker {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 114px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#selected_crumb {
+    top: -1rem;
+}
